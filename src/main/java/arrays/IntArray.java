@@ -25,6 +25,7 @@ public class IntArray implements Array<Integer> {
 	public void remove(int index) {
 		if(index < this.storage.size()) this.storage.remove(index);
 	}
+	public static IntArray of(int... values){ return new IntArray(values); }
 	@Override
 	public String toString() {
 		return this.storage.toString();

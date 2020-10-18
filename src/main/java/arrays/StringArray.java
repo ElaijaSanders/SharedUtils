@@ -25,6 +25,7 @@ public class StringArray implements Array<String> {
 	public void remove(int index) {
 		if(index < this.storage.size()) this.storage.remove(index);
 	}
+	public static StringArray of(String... values){ return new StringArray(values); }
 	@Override
 	public String toString() {
 		return this.storage.toString();

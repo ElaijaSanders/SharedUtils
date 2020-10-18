@@ -65,4 +65,9 @@ public class BaseTests{
 		a4.set(1, true);
 		assertTrue("BooleanArray", a4.get(1));
 	}
+	@Test
+	public void arraysOfTest(){
+		assertEquals("Empty array", null, StringArray.of().get(0));
+		assertEquals("Array of values", 1, 0+IntArray.of(0, 1, 2).get(1));
+	}
 }

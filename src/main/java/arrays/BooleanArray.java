@@ -5,7 +5,7 @@ import java.util.List;
 
 public class BooleanArray implements Array<Boolean>{
 	private List<Boolean> storage = new ArrayList<>();
-	public BooleanArray(Boolean...values) {
+	public BooleanArray(boolean...values) {
 		for(boolean value : values) this.storage.add(value);
 	}
 	@Override
@@ -25,6 +25,7 @@ public class BooleanArray implements Array<Boolean>{
 	public void remove(int index) {
 		if(index < this.storage.size()) this.storage.remove(index);
 	}
+	public static BooleanArray of(boolean... values){ return new BooleanArray(values); }
 	@Override
 	public String toString() {
 		return this.storage.toString();
