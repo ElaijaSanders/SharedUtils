@@ -7,8 +7,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.ThreadLocalRandom;
+import org.eclipse.collections.impl.list.Interval;
 
-public class Control {
+public class General {
 	public static String OS_Name = System.getProperty("os.name");
 	public static String OS_Version = System.getProperty("os.version");
 	public static InputStream STDIN = System.in;
@@ -23,7 +24,7 @@ public class Control {
 		return df.format(time);
 	}
 	@SuppressWarnings("null")
-	public static long asUnixTime(String time, String format){
+	public static long parseTime(String time, String format){
 		SimpleDateFormat df = new SimpleDateFormat(format);
 		try{
 			Date dt = df.parse(time);
@@ -32,5 +33,10 @@ public class Control {
 	}
 	public static int random(int min, int max){
 		return ThreadLocalRandom.current().nextInt(min, max + 1);
+	}
+	public static int[] range(int min, int max){
+		return Interval.fromTo(min, max).toIntArray();
+	} public static int[] range(int min, int max, int step){
+		return Interval.fromToBy(min, max, step+1).toIntArray();
 	}
 }
