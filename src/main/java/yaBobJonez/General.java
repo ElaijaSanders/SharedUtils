@@ -39,4 +39,7 @@ public class General {
 	} public static int[] range(int min, int max, int step){
 		return Interval.fromToBy(min, max, step+1).toIntArray();
 	}
+	public static void raiseError(String mes){
+		System.err.print(mes); System.exit(1);
+	}
 }

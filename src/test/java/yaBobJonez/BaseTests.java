@@ -15,6 +15,7 @@ import arrays.BooleanArray;
 import arrays.DoubleArray;
 import arrays.IntArray;
 import arrays.StringArray;
+import data.Strings;
 
 public class BaseTests{
 	@Test
@@ -69,5 +70,11 @@ public class BaseTests{
 	public void arraysOfTest(){
 		assertEquals("Empty array", null, StringArray.of().get(0));
 		assertEquals("Array of values", 1, 0+IntArray.of(0, 1, 2).get(1));
+	}
+	@Test
+	public void stringsTest(){
+		assertEquals("String reverse", "abcd", Strings.reverse("dcba"));
+		assertEquals("String repeating", "aaaaa", Strings.repeat("a", 5));
+		assertEquals("String by chars", new String[]{"1", "5", "3"}[1], Strings.toArray("153")[1]);
 	}
 }
